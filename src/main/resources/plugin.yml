@@ -1,0 +1,50 @@
+name: UltiminePlugin
+version: 1.0
+main: com.example.ultimine.UltiminePlugin
+api-version: 1.21
+description: FTB Ultimine replica for Paper/Leaves servers (MC 1.21.11)
+authors: [YourName]
+commands:
+  ultimine:
+    description: Ultimine 主命令
+    usage: /ultimine <reload|help|toggle|shape>
+permissions:
+  ultimine.use:
+    description: 允许使用连锁破坏
+    default: true
+  ultimine.reload:
+    description: 允许重载配置
+    default: op
+  ultimine.shape:
+    description: 允许切换形状
+    default: true
+  ultimine.shape.shapeless:
+    description: 允许使用无形状模式
+    default: true
+  ultimine.shape.small_square:
+    description: 允许使用小型方形模式
+    default: true
+  ultimine.shape.small_tunnel:
+    description: 允许使用小型通道模式
+    default: true
+  ultimine.shape.large_tunnel:
+    description: 允许使用大型通道模式
+    default: true
+  ultimine.shape.mining_tunnel:
+    description: 允许使用采矿通道模式
+    default: true
+  ultimine.shape.escape_tunnel:
+    description: 允许使用逃生通道模式
+    default: true
+  ultimine.preview:
+    description: 允许看到形状预览
+    default: true
+  ultimine.bypass.cooldown:
+    description: 绕过冷却时间
+    default: op
+  ultimine.bypass.limit:
+    description: 绕过方块数量限制
+    default: op
+  ultimine.bypass.blacklist:
+    description: 绕过方块黑名单
+    default: op

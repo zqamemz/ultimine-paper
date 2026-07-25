@@ -1,0 +1,102 @@
+# Ultimine 插件配置
+
+# 触发方式：是否允许「按住 Shift（潜行）临时触发」连锁破坏
+# true  = 按住 Shift 时连锁破坏生效，松开恢复单块挖掘（推荐，原版体验）
+# false = 仅通过 /ultimine toggle 命令常开
+sneak-trigger: true
+
+# 每次操作的最大方块数量
+max-blocks: 64
+
+# 每个方块的饥饿值消耗乘数
+exhaustion-per-block: 0.005
+
+# 是否需要工具才能激活连锁破坏
+require-tool: true
+
+# 工具损耗限制（耐久度低于此值时停止）
+prevent-tool-break: 5
+
+# 方块破坏失败时是否取消
+cancel-on-block-break-fail: false
+
+# 冷却时间（毫秒）
+cooldown: 1000
+
+# 启用右键功能
+features:
+  right-click-axe: true  # 斧头剥皮
+  right-click-hoe: true  # 锄头耕地
+  right-click-shovel: true  # 锹铲平地面
+  right-click-harvesting: true  # 收获农作物
+
+# 形状预览设置
+preview:
+  enabled: true  # 是否启用形状预览
+  particles:
+    enabled: true  # 是否显示粒子效果
+    type: "ENCHANT"  # 粒子类型（ENCHANT, CRIT, END_ROD, ENCHANTED_HIT 等；BARRIER/ENCHANTMENT_TABLE 在 1.21 已移除）
+    count: 1  # 每个方块的粒子数量
+
+# 合并标签（无形状模式）
+merge-tags:
+  - "minecraft:stone"
+  - "minecraft:cobblestone"
+  - "minecraft:dirt"
+  - "minecraft:grass_block"
+
+# 合并标签（形状模式）
+merge-tags-shaped:
+  - "*"  # * 表示任何方块
+
+# 默认形状
+default-shape: "shapeless"
+
+# 可用形状列表
+shapes:
+  shapeless:
+    name: "无形状"
+    description: "破坏周围相同类型的方块"
+    radius: 3
+  small_square:
+    name: "小型方形"
+    description: "3x3 方形区域"
+    radius: 1
+  small_tunnel:
+    name: "小型通道"
+    description: "直线通道"
+    length: 5
+  large_tunnel:
+    name: "大型通道"
+    description: "3x3 通道"
+    radius: 1
+    length: 5
+  mining_tunnel:
+    name: "采矿通道"
+    description: "向下采矿通道"
+    length: 10
+  escape_tunnel:
+    name: "逃生通道"
+    description: "向上逃生通道"
+    length: 10
+
+# 方块黑名单（这些方块不会被连锁破坏）
+blacklist:
+  - "minecraft:bedrock"
+  - "minecraft:barrier"
+
+# 方块白名单（只有这些方块会被连锁破坏，空列表表示全部允许）
+whitelist: []
+
+# 权限设置
+permissions:
+  # 是否启用精细权限控制
+  enable-fine-permissions: false
+  # 每个形状需要的权限
+  shape-permissions:
+    shapeless: "ultimine.shape.shapeless"
+    small_square: "ultimine.shape.small_square"
+    small_tunnel: "ultimine.shape.small_tunnel"
+    large_tunnel: "ultimine.shape.large_tunnel"
+    mining_tunnel: "ultimine.shape.mining_tunnel"
+    escape_tunnel: "ultimine.shape.escape_tunnel"
